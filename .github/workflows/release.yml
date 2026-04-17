@@ -23,12 +23,9 @@ jobs:
         run: npm ci
 
       - name: Build (Mac)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run dist
-
-      - name: Upload DMG
-        uses: softprops/action-gh-release@v2
-        with:
-          files: release/*.dmg
 
   build-win:
     runs-on: windows-latest
@@ -44,9 +41,6 @@ jobs:
         run: npm ci
 
       - name: Build (Windows)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run dist:win
-
-      - name: Upload EXE
-        uses: softprops/action-gh-release@v2
-        with:
-          files: release/*.exe
