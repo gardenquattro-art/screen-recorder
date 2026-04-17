@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  user-select: none;
+}
+
+/* macOSのタイトルバー用スペース */
+#root {
+  padding-top: env(safe-area-inset-top, 0px);
+}
